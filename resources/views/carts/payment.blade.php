@@ -1,4 +1,4 @@
-@extends('layouts.layoutPayment')
+@extends('layouts.simple')
 
 
 

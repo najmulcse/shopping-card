@@ -27,3 +27,11 @@ Route::get('products/',['as'=>'products.category','uses'=>'ProductController@pro
 Route::get('product/shippingAddress',['as'=>'product.shippingAddresss','uses'=>'CheckoutController@shippingAddresss']);
 Route::get('product/payment',['as'=>'product.payment','uses'=>'CheckoutController@payment']);
 
+
+Route::group(['middleware' => ['auth','isAdmin']],function(){
+
+	Route::get('admin',['as' => 'admin' , 'uses' => 'AdminController@index']);
+	Route::get('admin/category',['as' => 'admin.category' , 'uses' => 'AdminController@category']);
+
+
+});

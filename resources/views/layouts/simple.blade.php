@@ -10,8 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <title>Dream Shop</title>
 <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" type="text/css" href="{{asset('font-awesome/css/font-awesome.min.css')}}">
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{{asset('js/jquery.min.js')}}"></script>
+
 <!-- Custom Theme files -->
 <!--theme-style-->
 <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />  
@@ -23,8 +22,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- start menu -->
 <link href="{{asset('css/memenu.css')}}" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/memenu_new.js')}}"></script>
-{{-- <script type="text/javascript" src="{{asset('js/jquery.min.js.js')}}"></script> --}}
+
 <script type="text/javascript">
 $(document).ready(function(){$(".memenu").memenu();});
 </script>
@@ -45,9 +47,9 @@ $(document).ready(function(){$(".memenu").memenu();});
 <body>
 <!--header-->
 <div class="header">
-    <div class="header-top">
-        <div class="container">
-        <div class="col-sm-4 world">
+     <div class="header-top">
+        <div class="container-fluid">
+        <div class="col-sm-3 world">
                     <ul >
                         <li>
                         <select class="in-drop">
@@ -63,28 +65,15 @@ $(document).ready(function(){$(".memenu").memenu();});
                         </li>
                     </ul>
         </div>
-        <div class="col-sm-4 logo">
+        <div class="col-sm-3 logo">
                     <a href="{{url('/')}}"><img src="{{asset('images/logo.png')}}" alt=""></a> 
         </div>
         
-        <div class="col-sm-4 header-left">  
+        <div class="col-sm-6 ">  
             
-             @if (Auth::guest())  
-                    <ul class="log"><a href="{{url('/login')}}"  >Login</a>
-                    <span> or </span><a  href="{{url('register')}}"  >Signup</a></ul>
-            @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
-            @endif
-            
-                    <div class="cart box_1">
+             <div class="row">
+                
+                    <div class=" col-sm-6">
                       
                         <a href="{{route('shoppingCart')}}" class="btn btn-primary">
                        
@@ -95,7 +84,30 @@ $(document).ready(function(){$(".memenu").memenu();});
                         </a>
                         
                     </div>
-                    <div class="clearfix"> </div>
+                    <div class="col-sm-6 ">
+                     @if (Auth::guest()) 
+
+                            <ul class="log"><a href="{{url('/login')}}"  >Login</a>
+                            <span> or </span><a  href="{{url('register')}}"  >Signup</a></ul>
+                    @else
+                                
+                                <ul class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                    </ul>
+                                </ul>
+                                
+                    @endif
+                    </div>
+                    
+                    </div>
+
+                    
+                    
             </div>
                 
         </div>

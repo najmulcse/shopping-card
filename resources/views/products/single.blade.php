@@ -59,7 +59,7 @@
 									</select></li>
 							</ul>
 						</div>
-								<a href="#" class="cart item_add">More details</a>
+								 <a href="{{route('product.addToCart',['id' =>$id])}}" class="item_add btn btn-sm btn-primary">Add To Cart</a>
 						</div>
 					</div>
 			<div class="clearfix"> </div>
