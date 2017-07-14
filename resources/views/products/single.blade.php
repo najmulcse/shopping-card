@@ -287,8 +287,8 @@ $(window).load(function() {
 });
 </script>
 <!---pop-up-box---->
-					<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
-					<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+					<link href="{{asset('css/popuo-box.css')}}" rel="stylesheet" type="text/css" media="all"/>
+					<script src="{{asset('js/jquery.magnific-popup.js')}}" type="text/javascript"></script>
 					<!---//pop-up-box---->
 					 <script>
 						$(document).ready(function() {

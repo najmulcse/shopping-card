@@ -73,7 +73,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>
+                                <a class="btn btn-link" href="{{ url('/login') }}">Already have a account?
+                             </a>
                             </div>
+                             
                         </div>
                      </div>
                      

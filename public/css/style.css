@@ -418,13 +418,13 @@ p.footer-class a:hover{
 /*--//footer--*/
 /*-- contact --*/
 .contact {
-  padding: 4em 0;
+  padding: .5em 0;
 }
 .contact h1{
 	font-size: 3em;
 	color: #000;
   	font-family: 'OleoScript-Regular';
-	margin: 0 0px 1em;
+	margin: 0 0px .5em;
 	text-align: center;
 }
 .contact-bottom  span,.contact-bottom-top span{

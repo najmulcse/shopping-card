@@ -39,11 +39,11 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div class="col-md-4 col-md-offset-4">
                                 <div class="checkbox">
-                                    <label>
+                                   
                                         <input type="checkbox" name="remember"> Remember Me
-                                    </label>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -56,13 +56,14 @@
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                             </div>
+                           
                         </div>
                     </form>
                </div>   
                 <div class="col-md-6 login-left">
                  <h4>NEW CUSTOMERS</h4>
                  <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-                 <a class="acount-btn" href="register.html">Create an Account</a>
+                 <a class="acount-btn" href="{{url('register')}}">Create an Account</a>
                </div>
                <div class="clearfix"> </div>
              </div>
