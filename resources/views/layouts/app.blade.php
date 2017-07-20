@@ -25,7 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+
 <script type="text/javascript" src="{{asset('js/memenu_new.js')}}"></script>
 
 <script type="text/javascript">
@@ -100,7 +100,9 @@ $(document).ready(function(){$(".memenu").memenu();});
                                     <ul class="dropdown-menu" role="menu">
                                     @if(Auth::user()->isAdmin())
                                     <li><a href="{{route('admin')}}">Admin</a></li>
+                                     
                                     @endif
+                                    <li><a href="#">Orders</a></li>
                                         <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                                     </ul>
                                 </ul>

@@ -1,4 +1,4 @@
-@extends('layouts.simple')
+@extends('layouts.app')
 
 
 
@@ -52,11 +52,11 @@
 		<h3 class="panel-title">Please Fill up the trx ID to continue...</h3>
 	</div>
 	<div class="panel-body">
-		<form action="" method="POST" class="form-inline" role="form">
-							
+		<form action="{{route('checkPayment')}}" method="POST" class="form-inline" role="form">
+						{{ csrf_field() }}	
 							<div class="form-group">
 								<label class="" for="">Transcation ID:</label>
-								<input type="text" class="form-control" id="" placeholder="Trx ID">
+								<input type="text" class="form-control" id="" name="trx" placeholder="Trx ID">
 							</div>
 						
 							

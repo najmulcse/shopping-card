@@ -26,8 +26,9 @@ Route::post('cart-update/{id}',['as'=>'cart.updateQuantity','uses'=>'ProductCont
 Route::get('products/',['as'=>'products.category','uses'=>'ProductController@productsCategory']);
 Route::get('product/shippingAddress',['as'=>'product.shippingAddresss','uses'=>'CheckoutController@shippingAddresss']);
 Route::get('product/payment',['as'=>'product.payment','uses'=>'CheckoutController@payment']);
+Route::post('checkPayment',['as'=>'checkPayment','uses'=>'CheckoutController@checkPayment']);
 
-
+//-----------------Admin-----------------------
 Route::group(['middleware' => ['auth','isAdmin']],function(){
 
 	Route::get('admin',['as' => 'admin' , 'uses' => 'AdminController@index']);
