@@ -13,19 +13,37 @@
             </div>
 <div class="row">
 	<div class="col-sm-4 col-sm-offset-1">
-		<form  ic-post-to ="{{route('add.category')}}" ic-target="#result" class="form-horizontal" role="form">
+		<form  ic-post-to ="{{route('add.subcategory')}}" ic-target="#result" class="form-horizontal" role="form">
 				{{csrf_field()}}
 				<div class="form-group">
-					<legend>Add Category</legend>
+					<legend>Add Sub Category</legend>
 				</div>	
 				@if (session('msg'))
 				    <div class="alert alert-success text-center">
 				       {{ session('msg') }}
 				    </div>
 				 @endif
-				<div class="form-group @if($errors->has('category')) has-error @endif">
-					<input type="text" name="category" id="inputCategory" class="form-control"  placeholder="Please enter a category">
-					{!!$errors->first('category','<span class="help-block">:message</span>')!!}
+
+
+          <div class="form-group @if($errors->has('category')) has-error @endif">
+            <label class="">Category Name</label>
+            <div class="">
+                <select class="form-control" id="catId" name="category" >    
+                   <option value="">Select category</option>
+                 
+                  @foreach( $cats as $cat)
+                  <option value="{{$cat->id}}" class="form-control">{{$cat->name}}
+                  </option>    
+                  @endforeach
+              
+              </select>
+              {!!$errors->first('category','<span class="help-block">:message</span>')!!}
+            </div>
+          </div>
+
+				<div class="form-group @if($errors->has('sub_category')) has-error @endif">
+					<input type="text" name="sub_category" id="inputCategory" class="form-control"  placeholder="Please enter a sub category">
+					{!!$errors->first('sub_category','<span class="help-block">:message</span>')!!}
 				</div>
 				<div class="form-group">
 						<button type="submit" class="btn btn-primary form-control">Add category</button>
@@ -34,13 +52,13 @@
 
 	</div>
 	<div class="col-sm-5 col-sm-offset-1">
-		<legend>All Categories</legend>
+		<legend>All Sub Categories</legend>
     <div id="result">
 		<div class="table-responsive">
 			<table class="table table-hover table-bordered">
 				<thead>
 					<tr>
-						<th>Category</th>
+						<th>Sub Category</th>
 						<th>Option</th>
 						
 					</tr>
@@ -48,13 +66,17 @@
 				<tbody >	
 					@if(isset($cats))
             @foreach($cats as $category)
+            @foreach($category->subcategories as $c)
             <tr id="cat_table{{$category->id}}">
-            <td>{{$category->name}}</td>
+               
+            <td>{{$c->name}}</td>
+
             <td >
               <button class="btn btn-info open-modal" value="{{$category->id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
               <button class="btn btn-danger delete-task delete-modal" value="{{$category->id}}"><i class="fa fa-trash" aria-hidden="true"></i> </button>
             </td>
             </tr>
+             @endforeach
             @endforeach
           @endif 
 

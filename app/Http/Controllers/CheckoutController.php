@@ -16,12 +16,14 @@ class CheckoutController extends Controller
 
     public function shippingAddresss()
     {
-    	return view('users.shippingAddress');
+        $cats = Category::all();
+    	return view('users.shippingAddress',compact('cats'));
     }
 
     public function payment()
     {
-    	return view('carts.payment');
+        $cats = Category::all();
+    	return view('carts.payment',compact('cats'));
     }
      public function checkPayment(Request $request)
     {

@@ -6,18 +6,21 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Http\Requests;
 use Cart;
+use App\Category;
 class ProductController extends Controller
 {
     public function landing()
     {
             $products = Product::all();
-            return view('welcome',compact('products'));
+            $cats     =Category::all();
+            return view('welcome',compact('products','cats'));
     }
 
     public function singleProduct(Product $id)
     {
     
-    	return view('products.single',compact('id'));
+        $cats = Category::all();
+    	return view('products.single',compact('id','cats'));
     }
 
     public function productsCategory()
@@ -27,7 +30,8 @@ class ProductController extends Controller
     public function shoppingCart()
     {
     	$cartItems = Cart::content();
-    	return view('carts.shoppingCart',compact('cartItems'));
+        $cats = Category::all();
+    	return view('carts.shoppingCart',compact('cartItems','cats'));
 
     }
 

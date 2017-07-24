@@ -1,7 +1,7 @@
 @extends('admins.layout')
 
 
-@section('content')
+@section('content_admin')
 
 
         <div id="page-wrapper">

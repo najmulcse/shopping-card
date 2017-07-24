@@ -28,11 +28,17 @@ Route::get('product/shippingAddress',['as'=>'product.shippingAddresss','uses'=>'
 Route::get('product/payment',['as'=>'product.payment','uses'=>'CheckoutController@payment']);
 Route::post('checkPayment',['as'=>'checkPayment','uses'=>'CheckoutController@checkPayment']);
 
+
+
 //-----------------Admin-----------------------
 Route::group(['middleware' => ['auth','isAdmin']],function(){
 
 	Route::get('admin',['as' => 'admin' , 'uses' => 'AdminController@index']);
 	Route::get('admin/category',['as' => 'admin.category' , 'uses' => 'AdminController@category']);
+	Route::post('admin/add-category',['as' => 'add.category' , 'uses' => 'AdminController@addCategory']);
+	Route::get('admin/sub-category',['as' => 'admin.subcategory' , 'uses' => 'AdminController@subCategory']);
+	Route::post('admin/add-sub-category',['as' => 'add.subcategory' , 'uses' => 'AdminController@addSubCategory']);
+
 
 
 });
