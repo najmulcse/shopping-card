@@ -46,7 +46,7 @@
 					{!!$errors->first('sub_category','<span class="help-block">:message</span>')!!}
 				</div>
 				<div class="form-group">
-						<button type="submit" class="btn btn-primary form-control">Add category</button>
+						<button type="submit" class="btn btn-primary form-control">Add Sub category</button>
 				</div>
 		</form>
 

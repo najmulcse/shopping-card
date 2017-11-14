@@ -4,6 +4,9 @@
 <head>
 <title>Dream Shop</title>
 <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
+<script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/intercoolernew.min.js')}}"></script>
 <link rel="stylesheet" type="text/css" href="{{asset('font-awesome/css/font-awesome.min.css')}}">
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -18,9 +21,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- start menu -->
 <link href="{{asset('css/memenu.css')}}" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/intercoolernew.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
+
 
 <script type="text/javascript" src="{{asset('js/memenu_new.js')}}"></script>
 

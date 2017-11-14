@@ -91,8 +91,8 @@ $(document).ready(function(){$(".memenu").memenu();});
                                     <li><a href="{{route('admin')}}">Admin</a></li>
                                      
                                     @endif
-                                    <li><a href="#">Orders</a></li>
-                                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                         <li><a href="{{route('orderList')}}"> <i class="fa fa-btn fa-briefcase" aria-hidden="true"></i> All Orders</a></li>
+                                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
                                     </ul>
                                 </ul>
                                 
@@ -117,7 +117,7 @@ $(document).ready(function(){$(".memenu").memenu();});
          <div class="col-sm-8 h_menu4">
                 <ul class="memenu skyblue">
                       <li class=" grid"><a  href="{{url('/')}}">Home</a></li> 
-                      @if($cats)
+                      @if(!empty($cats))
                         @foreach($cats as $cat)
                       <li><a  href="#">{{$cat->name}}</a>
                         <div class="mepanel">

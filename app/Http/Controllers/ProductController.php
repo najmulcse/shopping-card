@@ -13,7 +13,9 @@ class ProductController extends Controller
     {
             $products = Product::all();
             $cats     =Category::all();
-            return view('welcome',compact('products','cats'));
+            return view('welcome')
+                            ->with('products',$products)
+                            ->with('cats',$cats);
     }
 
     public function singleProduct(Product $id)

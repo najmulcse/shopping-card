@@ -33,7 +33,7 @@
                   <input type="hidden" name="id" value="{{ $product->rowId}}">
 				  <input name="quantity" type="number" value="{{$product->qty}}" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
                   <input type="submit" name="submit" value="Change ?" class="btn btn-info">
-                </form>
+            </form>
 
 			</td>		
 			<td>${{$product->price}}</td>

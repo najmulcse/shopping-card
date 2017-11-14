@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Category;
 use Illuminate\Support\Facades\Auth;
 use Cart;
+use Carbon;
 class CheckoutController extends Controller
 {
     public function __construct()
@@ -39,12 +41,11 @@ class CheckoutController extends Controller
             {
               $order->orderItems()->attach($cartItem->id,[
                 'quantity' => $cartItem->qty,
-                'stotal' => $cartItem->qty*$cartItem->price
+                'stotal' => $cartItem->qty*$cartItem->price,
+                'created_at' =>Carbon\Carbon::now()
               ]);
 
-                // $product =Product::create([
-                //     'product_id'
-                //     ]);
+                
             }
 
             Cart::destroy();

@@ -16,7 +16,7 @@ class ProductTableSeeder extends Seeder
                 'code'			=> '2011',
                 'desc'			=>'Long pant with very soft finishing',
                 'quantity'		=> 20,
-                'price'			=> 200.22 ,
+                'price'			=> 20.22 ,
                 'photo'			=> 'images/pi6.png'
 
 
@@ -27,7 +27,7 @@ class ProductTableSeeder extends Seeder
                 'code'			=> '2012',
                 'desc'			=>'Long pant with very soft finishing',
                 'quantity'		=> 203,
-                'price'			=> 100.22 ,
+                'price'			=> 15.22 ,
                 'photo'			=> 'images/pi6.png'
 
 
@@ -38,7 +38,7 @@ class ProductTableSeeder extends Seeder
                 'code'			=> '2014',
                 'desc'			=>'Long pant with very soft finishing',
                 'quantity'		=> 220,
-                'price'			=> 2010.22 ,
+                'price'			=> 26.22 ,
                 'photo'			=> 'images/pi4.png'
 
 
@@ -48,7 +48,7 @@ class ProductTableSeeder extends Seeder
                 'code'			=> '20177',
                 'desc'			=>'Long pant with very soft finishing',
                 'quantity'		=> 29,
-                'price'			=> 455.22 ,
+                'price'			=> 82.22 ,
                 'photo'			=> 'images/pi3.png'
 
 
